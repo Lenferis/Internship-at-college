@@ -1,4 +1,5 @@
 <script setup>
+const baseUrl = import.meta.env.BASE_URL
 import { ref, onMounted } from 'vue';
 import { productsData } from '../data'; // импорт данных о продуктах
 
@@ -149,8 +150,7 @@ onMounted(() => {
                     class="catalog-item" 
                     :key="product.id">
                     <div class="item-img">
-                        <img :src="'../img/products/potato/' + product.image" :alt="product.title">
-                    </div>
+                        <img :src="`${baseUrl}img/products/potato/${product.image}`" :alt="product.title">                    </div>
                     <div class="item-text">
                         <h3 class="item-title">{{ product.title }}</h3>
                         <p class="item-desc">{{ product.short_text }}</p>

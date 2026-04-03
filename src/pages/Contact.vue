@@ -1,4 +1,5 @@
 <script setup>
+const baseUrl = import.meta.env.BASE_URL
 import { ref, onMounted } from 'vue';
 import { productsData } from '../data.js';
 
@@ -213,7 +214,7 @@ onMounted(() => {
                             <tbody>
                                 <tr v-for="item in cartItems" :key="item.id">
                                     <td class="cart-image" data-label="Image">
-                                        <img :src="'/img/products/potato/' + item.image" :alt="item.title" width="60">
+                                        <img :src="`${baseUrl}img/products/potato/${item.image}`" :alt="item.title" width="60">
                                     </td>
                                     <td class="cart-title" data-label="Product Name">{{ item.title }}</td>
                                     <td class="cart-desc" data-label="Description">{{ item.short_text }}</td>

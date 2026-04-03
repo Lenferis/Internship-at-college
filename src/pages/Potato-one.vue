@@ -1,4 +1,5 @@
 <script setup>
+const baseUrl = import.meta.env.BASE_URL
 import { ref, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
 import { productsData } from '../data.js';
@@ -156,8 +157,7 @@ onMounted(() => {
                 </div>
 
                 <div class="media-column">
-                    <img :src="'/img/products/potato/' + product[0].image" :alt="product[0].title" class="main-img">
-                    <a href="#" class="pdf-btn" @click.prevent>
+                        <img :src="`${baseUrl}img/products/potato/${product[0].image}`" :alt="product[0].title" class="main-img">                    <a href="#" class="pdf-btn" @click.prevent>
                         <img src="../assets/icons/pdf.svg" alt="pdf">
                         Download PDF
                     </a>
